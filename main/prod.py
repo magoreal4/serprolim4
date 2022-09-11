@@ -9,7 +9,8 @@ DEBUG = False
 
 SECRET_KEY = env.str("SECRET_KEY")
 
-ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
+# ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     "default": {
