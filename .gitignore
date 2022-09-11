@@ -320,3 +320,4 @@ env/
 
 .vscode
 cache/
+staticfiles/
