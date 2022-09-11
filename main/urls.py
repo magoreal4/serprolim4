@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
@@ -25,6 +25,8 @@ from django.conf import settings
 from django.views.generic.base import RedirectView
 
 from django.contrib.staticfiles.storage import staticfiles_storage
+
+from wfavicon.urls import urls as favicon_urls
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),
@@ -54,10 +56,9 @@ if settings.DEBUG:
 
 urlpatterns = urlpatterns + [
     path("", include(wagtail_urls)),
+    path("", include(favicon_urls)),
 ]
 
-urlpatterns += [
-    path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'favicon.ico'))
-]
-
-print(settings.STATIC_URL + 'favicon.ico')
+# urlpatterns += [
+#     path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'favicon.ico'))
+# ]

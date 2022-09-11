@@ -1,12 +1,9 @@
-
-
-{% load static wagtailcore_tags wagtailuserbar %}
-{% comment %} {% load static wagtailcore_tags wagtailuserbar favicon_tags %} {% endcomment %}
+{% load static wagtailcore_tags wagtailuserbar favicon_tags %}
 <!DOCTYPE html>
 <html lang="es" >
   <head>
     <meta charset="utf-8" />
-    {% comment %} {% favicon_meta %} {% endcomment %}
+    {% favicon_meta %}
     {% if settings.analytics.AnalyticsSettings.head_scripts %}
       {{ settings.analytics.AnalyticsSettings.head_scripts|safe }}
     {% endif %}
@@ -54,7 +51,7 @@
 
     {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/floating-wpp.min.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/floating-wpp.min.css' %}"> {% endcomment %}
     {% endblock %}
   </head>
 
@@ -82,7 +79,7 @@
     {% include "footer.html"  %}
 
     {% block js %}
-    <script type="text/javascript">
+    {% comment %} <script type="text/javascript">
       /* Menu */
 
     window.addEventListener('click', function (event) {
@@ -118,7 +115,7 @@
                 });
             });
         </script>
-        {% endif %}
+        {% endif %} {% endcomment %}
 
       {% endblock js %}
   </body>

@@ -20,21 +20,3 @@ class HomePage(Page):
     #     'base.StandardPage'
     # ]
 
-class StandardPage(Page):
-    """
-    A generic content page. On this demo site we use it for an about page but
-    it could be used for any type of page content that only needs a title,
-    image, introduction and body field
-    """
-
-    introduction = models.TextField(
-        help_text='Text to describe the page',
-        blank=True)
-
-    # body = StreamField(
-    #     BaseStreamBlock(), verbose_name="Page body", blank=True
-    # )
-    content_panels = Page.content_panels + [
-        FieldPanel('introduction', classname="full"),
-        # FieldPanel('body'),
-    ]

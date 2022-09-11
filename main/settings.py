@@ -25,6 +25,8 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 INSTALLED_APPS = [
     'home',
+    'base',
+    'wfavicon',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail',
+    'wagtail.contrib.settings',
 
     'taggit',
     'modelcluster',
@@ -207,3 +210,5 @@ WAGTAILADMIN_BASE_URL = 'https://serprolim.limpiezapozossepticos.com'
 
 # Reverse the default case-sensitive handling of tags
 TAGGIT_CASE_INSENSITIVE = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
