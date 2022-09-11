@@ -622,11 +622,8 @@ form select:focus{
   }
 }
 
-main, footer {
-  transition: all 0.5s;
-}
-
 body{
+  min-height: 100vh;
   overflow-x: hidden;
   /* -webkit-perspective: 2500px;
         perspective: 2500px; */
@@ -639,6 +636,13 @@ table{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   table-layout: fixed;
+  width: 100%;
+}
+
+footer{
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
   width: 100%;
 }
 
@@ -892,10 +896,6 @@ table{
   height: 100%;
 }
 
-.min-h-full{
-  min-height: 100%;
-}
-
 .w-6{
   width: 1.5rem;
 }
@@ -973,14 +973,19 @@ table{
   border-color: rgb(31 41 55 / var(--tw-border-opacity));
 }
 
-.bg-gray-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(249 204 65 / var(--tw-bg-opacity));
+}
+
+.bg-error{
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 72 63 / var(--tw-bg-opacity));
+}
+
+.bg-gray-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .bg-gray-500{

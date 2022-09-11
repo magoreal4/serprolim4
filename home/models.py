@@ -19,7 +19,7 @@ class HomePage(MetadataPageMixin, Page):
         cache.clear()
         return super().save(*args, **kwargs)
 
-    # subpage_types = [
-    #     'blog.BlogIndexPage',
-    #     'base.StandardPage'
-    # ]
+    subpage_types = [
+        # 'blog.BlogIndexPage',
+        'base.StandardPage'
+    ]

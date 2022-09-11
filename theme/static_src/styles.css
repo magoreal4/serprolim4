@@ -46,12 +46,9 @@
     form select {
         @apply  bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-light focus:border-primary-light block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
     }
-    main, footer {
-        -webkit-transition: all 0.5s;
-        transition: all 0.5s;
-    }
+
     body {
-        @apply overflow-x-hidden;
+        @apply overflow-x-hidden min-h-screen;
         /* -webkit-perspective: 2500px;
         perspective: 2500px; */
     }
@@ -59,6 +56,10 @@
         @apply bg-white max-w-xl mx-auto;
         table-layout: fixed; 
         width: 100%;
+    }
+
+    footer {
+        @apply fixed left-0 bottom-0 w-full
     }
 
 
