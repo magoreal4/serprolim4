@@ -24,6 +24,8 @@ from django.conf import settings
 
 from django.views.generic.base import RedirectView
 
+from django.contrib.staticfiles.storage import staticfiles_storage
+
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
@@ -36,8 +38,10 @@ urlpatterns = [
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's serving mechanism
     # re_path(r'', include(wagtail_urls)),
+    # path("favicon.ico",RedirectView.as_view(url=staticfiles_storage.url("favicon.ico")),),
 ]
 
+# print(staticfiles_storage.url("favicon.ico"))
 
 
 if settings.DEBUG:
@@ -47,13 +51,13 @@ if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns() # tell gunicorn where static files are in dev mode
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += path("__reload__/", include("django_browser_reload.urls")),
-    print("ssssssssssssssssssss", settings.DEBUG )
 
 urlpatterns = urlpatterns + [
     path("", include(wagtail_urls)),
 ]
 
-    # urlpatterns += [
-    #     path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'myapp/images/favicon.ico'))
-    # ]
+urlpatterns += [
+    path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'favicon.ico'))
+]
 
+print(settings.STATIC_URL + 'favicon.ico')
