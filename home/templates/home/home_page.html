@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% comment %} {% load wagtailimages_tags wagtailcore_tags filters_tags wmetadata_tags static cache %} {% endcomment %}
+{% load wagtailimages_tags wagtailcore_tags static cache %}
+
+{% block meta_tag %}
+  {% comment %} {% meta_tags %}  {% endcomment %}
+  {{ block.super }}
+{% endblock %} 
+  
+{% block css %}
+  {{ block.super }}
+{% endblock %}
+
+{% block body_class %}
+xl:container mx-auto bg-gray-500 min-h-full
+{% endblock body_class %}
+
+{% block content %}
+{% include "header.html" with class="md:bg-primary xl:container w-full  z-50" %}
+
+{% cache 604800 home %}
+<main class="divide-y divide-gray-400 z-20">
+  
+    <h1 class="font-bold text-xl"> Pagina inicio </h1>
+   
+</main>
+
+{% endcache %}
+
+{% endblock content %}
+
+{% block js %}
+  {{ block.super }}
+
+<script defer type="text/javascript" src="{% static 'js/home.js' %}"></script>
+
+{% endblock js %}    
+
+
+
+
+

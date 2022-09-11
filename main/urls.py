@@ -31,6 +31,8 @@ urlpatterns = [
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
 
+    path("__reload__/", include("django_browser_reload.urls")),
+
     # Optional URL for including your own vanilla Django urls/views
     # re_path(r'', include('home.urls')),
 

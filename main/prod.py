@@ -9,8 +9,7 @@ DEBUG = False
 
 SECRET_KEY = env.str("SECRET_KEY")
 
-ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS'))
 
 DATABASES = {
     "default": {
@@ -18,8 +17,3 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
-
-# try:
-#     from .local import *
-# except ImportError:
-#     pass

@@ -22,30 +22,23 @@ ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 INSTALLED_APPS = INSTALLED_APPS + [
-    # 'tailwind',
-    # 'theme',
-    # 'django_browser_reload',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
     # 'django_extensions',
     # # "debug_toolbar",
     # 'wagtail.contrib.styleguide',
 ]
 
 MIDDLEWARE = MIDDLEWARE + [
-    # 'django_browser_reload.middleware.BrowserReloadMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 # TAILWIND_CSS_PATH = './css/main.css'
 
-# TAILWIND_APP_NAME = 'theme'
+TAILWIND_APP_NAME = 'theme'
 
-# INTERNAL_IPS = [
-#     "127.0.0.1",
-# ]
-
-
-
-# try:
-#     from .local import *
-# except ImportError:
-#     pass
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
