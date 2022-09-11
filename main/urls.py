@@ -31,8 +31,6 @@ urlpatterns = [
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
 
-    path("__reload__/", include("django_browser_reload.urls")),
-
     # Optional URL for including your own vanilla Django urls/views
     # re_path(r'', include('home.urls')),
 
@@ -46,6 +44,11 @@ if settings.DEBUG:
 
     urlpatterns += staticfiles_urlpatterns() # tell gunicorn where static files are in dev mode
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns = [
+    path("__reload__/", include("django_browser_reload.urls")),
+]
+
+
     # urlpatterns += [
     #     path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'myapp/images/favicon.ico'))
     # ]
