@@ -11,7 +11,7 @@ from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 
-
+from django.core.cache import cache
 # from wagtailsvg.models import Svg
 # from wagtailsvg.edit_handlers import SvgChooserPanel
 

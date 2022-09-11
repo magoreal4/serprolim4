@@ -4,29 +4,29 @@
   <head>
     <meta charset="utf-8" />
     {% favicon_meta %}
-    {% if settings.analytics.AnalyticsSettings.head_scripts %}
-      {{ settings.analytics.AnalyticsSettings.head_scripts|safe }}
+    {% if settings.wanalytics.AnalyticsSettings.head_scripts %}
+      {{ settings.wanalytics.AnalyticsSettings.head_scripts|safe }}
     {% endif %}
 
-    {% if settings.analytics.AnalyticsSettings.gads_id %}
+    {% if settings.wanalytics.AnalyticsSettings.gads_id %}
     <!-- Global site tag (gtag.js) - Google Ads: 665045883 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-{{ settings.analytics.AnalyticsSettings.gads_id }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-{{ settings.analytics.AnalyticsSettings.gads_id }}');
-    </script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-{{ settings.wanalytics.AnalyticsSettings.gads_id }}"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-{{ settings.wanalytics.AnalyticsSettings.gads_id }}');
+      </script>
     <!-- End Google Tag Manager -->
     {% endif %}
 
-    {% if settings.analytics.AnalyticsSettings.gtm_id %}
+    {% if settings.wanalytics.AnalyticsSettings.gtm_id %}
     <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       ' https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-{{ settings.analytics.AnalyticsSettings.gtm_id }}');</script>
+      })(window,document,'script','dataLayer','GTM-{{ settings.wanalytics.AnalyticsSettings.gtm_id }}');</script>
       <!-- End Google Tag Manager -->
     {% endif %}
 
@@ -43,10 +43,11 @@
     </title>
     <meta name="description" content="{{ page.search_description }}" />
     {% endblock meta_tag %}
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     {% if page.canonical_url %}
-    <link rel="canonical" href="{{ page.canonical_url }}"/>
+      <link rel="canonical" href="{{ page.canonical_url }}"/>
     {% endif %}
 
     {% block css %}
@@ -56,12 +57,12 @@
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
-    {% if settings.analytics.AnalyticsSettings.body_scripts %}
-      {{ settings.analytics.AnalyticsSettings.body_scripts|safe }}
+    {% if settings.wanalytics.AnalyticsSettings.body_scripts %}
+      {{ settings.wanalytics.AnalyticsSettings.body_scripts|safe }}
     {% endif %}
     <!-- Google Tag Manager (noscript) -->
-    {% if settings.analytics.AnalyticsSettings.gtm_id %}    
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-{{ settings.analytics.AnalyticsSettings.gtm_id }}"
+    {% if settings.wanalytics.AnalyticsSettings.gtm_id %}    
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-{{ settings.wanalytics.AnalyticsSettings.gtm_id }}"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% endif %} 
     <!-- End Google Tag Manager (noscript) -->

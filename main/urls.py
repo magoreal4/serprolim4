@@ -28,11 +28,15 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 
 from wfavicon.urls import urls as favicon_urls
 
+from wagtail.contrib.sitemaps.views import sitemap
+
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
+
+    path('sitemap.xml', sitemap),
 
     # Optional URL for including your own vanilla Django urls/views
     # re_path(r'', include('home.urls')),

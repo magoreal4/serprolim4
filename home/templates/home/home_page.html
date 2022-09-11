@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% comment %} {% load wagtailimages_tags wagtailcore_tags filters_tags wmetadata_tags static cache %} {% endcomment %}
-{% load wagtailimages_tags wagtailcore_tags static cache %}
+{% load wagtailimages_tags wagtailcore_tags wmetadata_tags static cache %}
 
 {% block meta_tag %}
-  {% comment %} {% meta_tags %}  {% endcomment %}
+  {% meta_tags %} 
   {{ block.super }}
 {% endblock %} 
   
