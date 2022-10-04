@@ -1,10 +1,9 @@
 {% load static %}
 {% comment %} {% load static navigation_tags svg %} {% endcomment %}
-{% comment %} <header class="{{ class }}">{% endcomment %}
 
 
   <header class="{{ class }}">
-    <div class="flex items-center justify-between h-full md:h-16 relative">
+    <div class="flex items-center justify-between h-full md:h-16">
 
       <div class="absolute left-0 top-0 md:flex md:items-center md:gap-12 z-50">
         <a href="/" class="pb-2 rounded-br-lg md:bg-primary uppercase sm:inline-flex">
@@ -18,9 +17,8 @@
         </a>
       </div>
 
-      <nav aria-labelledby="header-navigation" class="absolute mx-auto text-xl uppercase text-black">
+      <nav aria-labelledby="header-navigation" class="absolute md:relative mx-auto text-xl uppercase text-black">
         <h2 class="sr-only" id="header-navigation">Header navigation</h2>
-
         <ul id="menu"
           class="bg-primary bg-opacity-90 py-9 md:py-0 w-full fixed md:relative duration-500 transform -translate-y-full md:-translate-y-0 flex flex-col md:flex-row items-center gap-9 ">
           <li>
