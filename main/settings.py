@@ -34,6 +34,8 @@ STATIC_URL = "/static/"
 INSTALLED_APPS = [
     'home',
     'base',
+    'blog',
+
     'wfavicon',
     "wmetadata",
     'wgeneralData',
@@ -62,6 +64,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "django.contrib.sitemaps",
+
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
@@ -93,6 +97,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'wagtail.contrib.settings.context_processors.settings',
+                'blog.context_processors.blog_page',
             ],
         },
     },

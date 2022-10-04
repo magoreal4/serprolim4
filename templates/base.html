@@ -80,7 +80,7 @@
     {% include "footer.html"  %}
 
     {% block js %}
-    {% comment %} <script type="text/javascript">
+    <script type="text/javascript">
       /* Menu */
 
     window.addEventListener('click', function (event) {
@@ -101,13 +101,13 @@
       <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
       <script defer type="text/javascript" src="{% static 'js/floating-wpp.min.js' %}"></script>
 
-        {% if settings.generalData.GeneralSettings.mjeGlobo %}
+        {% if settings.wgeneralData.GeneralSettings.mjeGlobo %}
         <script defer type="text/javascript">
           $(function () {
             $('#whatsapp').floatingWhatsApp({
-            phone: '+591{{ settings.generalData.GeneralSettings.cel }}',
+            phone: '+591{{ settings.wgeneralData.GeneralSettings.cel }}',
             popupMessage: 'Hola, Como podemos ayuderle?',
-            message: "{{ settings.generalData.GeneralSettings.mjeGlobo }}",
+            message: "{{ settings.wgeneralData.GeneralSettings.mjeGlobo }}",
             showPopup: false,
             showOnIE: false,
             size: 55,
@@ -116,7 +116,7 @@
                 });
             });
         </script>
-        {% endif %} {% endcomment %}
+        {% endif %}
 
       {% endblock js %}
   </body>
