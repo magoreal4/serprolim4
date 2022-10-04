@@ -15,10 +15,10 @@ from wmetadata.models import MetadataPageMixin
 
 class HomePage(MetadataPageMixin, Page):
 
-#     subpage_types = [
-#         # 'blog.BlogIndexPage',
-#         # 'base.StandardPage'
-#     ]
+    subpage_types = [
+        'blog.BlogIndexPage',
+        'base.StandardPage'
+    ]
 # BANNER
     subtitle = models.CharField(
         "Sub Titulo",

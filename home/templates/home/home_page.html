@@ -18,7 +18,7 @@ xl:container mx-auto bg-gray-900 min-h-full
 {% block content %}
 {% include "header.html" with class="md:bg-primary xl:container w-full fixed z-50" %}
 
-{% comment %} {% cache 604800 home %} {% endcomment %}
+{% cache 604800 home %}
 <main class="divide-y divide-gray-400 z-20">
 
     <!-- BANNER  -->
@@ -35,7 +35,7 @@ xl:container mx-auto bg-gray-900 min-h-full
   </section>
 
   <!-- POSTS  -->
-  <section class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 bg-gray-200"">
+  <section class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 bg-gray-200">
     {% for post in 3posts %}
     <a rel="" href="{{ post.url }}" class="frameCard my-6 group">
       {% image post.image height-240 format-webp class="object-cover w-full h-64 rounded-t-lg" %}
@@ -136,7 +136,7 @@ xl:container mx-auto bg-gray-900 min-h-full
   
 </main>
 
-{% comment %} {% endcache %} {% endcomment %}
+{% endcache %}
 
 {% endblock content %}
 
