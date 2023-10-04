@@ -1,0 +1,16 @@
+# /etc/systemd/system/serprolim4.service
+
+[Unit]
+Description=gunicorn daemon
+Requires=serprolim4.socket
+After=network.target
+
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/serprolim4
+ExecStart=/root/serprolim4/.venv/bin/gunicorn     --access-logfile -     --workers 3     --bind unix:/run/serprolim4.sock     main.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
