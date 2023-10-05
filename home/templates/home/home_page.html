@@ -18,7 +18,7 @@ xl:container mx-auto bg-gray-900 min-h-full
 {% block content %}
 {% include "header.html" with class="md:bg-primary xl:container w-full fixed z-50" %}
 
-{% cache 604800 home %}
+{% cache 14400 home %} 
 <main class="divide-y divide-gray-400 z-20">
 
     <!-- BANNER  -->
@@ -133,7 +133,7 @@ xl:container mx-auto bg-gray-900 min-h-full
     </div>
     {% endfor %}    
   </section>
-  
+
 </main>
 
 {% endcache %}

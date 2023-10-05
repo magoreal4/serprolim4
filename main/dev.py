@@ -15,7 +15,7 @@ DATABASES = {
     }
 }
 
-SECRET_KEY = env.str("SECRET_KEY")
+SECRET_KEY = env.str("SECRET_KEY","holacomoestas,bienomal")
 
 ALLOWED_HOSTS = tuple(env.list('ALLOWED_HOSTS', default=[]))
 

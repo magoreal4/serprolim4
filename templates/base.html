@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar favicon_tags %}
+{% load static wagtailcore_tags wagtailuserbar favicon_tags custom_filters %}
 <!DOCTYPE html>
 <html lang="es" >
   <head>
@@ -72,10 +72,23 @@
 
 
     {% comment %} https://github.com/rafaelbotazini/floating-whatsapp {% endcomment %}
-    <div id="whatsapp" class="z-10000 fixed bottom-12 left-1 sm:left-3 lg:left-10 xl:left-20 2xl:left-40"></div>
+    {% comment %} <div id="whatsapp" class="z-10000 fixed bottom-12 left-1 sm:left-3 lg:left-10 xl:left-20 2xl:left-40"></div> {% endcomment %}
     
     {% block content %}
     {% endblock %}
+
+    <div id="wapp" class="fixed bottom-12 right-4 w-16 xl:right-32 border-none">
+      <a href="https://wa.me/591{{ settings.wgeneralData.GeneralSettings.cel }}?text={{ settings.wgeneralData.GeneralSettings.mjeGlobo|replace_space }}" aria-label="Whatsapp">
+        <svg fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 125 125">
+            <path fill="#ffffff" class="sombra-x2" d="M6 116a1 1 0 0 1-2-2l8-28a56 56 0 1 1 23 22l-29 8z" />
+            <path fill="#40c351"
+                d="M93 27c-8-9-20-14-32-14a46 46 0 0 0-39 70l2 2-5 17 17-5 2 1a46 46 0 0 0 55-71z" />
+            <path fill="#ffffff"
+                d="m47 36-3-3h-2l-4 2c-1 2-5 5-5 12 0 6 5 13 6 14s9 15 23 20c12 5 14 4 17 4 2 0 8-3 9-7l1-6-3-2-9-4h-3l-5 6h-3l-11-7c-4-3-6-8-7-9v-3l2-2 2-3v-2l-5-10z" />
+        </svg>
+      </a>
+    </div> 
+
 
     {% include "footer.html"  %}
 
@@ -99,7 +112,7 @@
       </script>
 
       <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-      <script defer type="text/javascript" src="{% static 'js/floating-wpp.min.js' %}"></script>
+      {% comment %}  <script defer type="text/javascript" src="{% static 'js/floating-wpp.min.js' %}"></script>
 
         {% if settings.wgeneralData.GeneralSettings.mjeGlobo %}
         <script defer type="text/javascript">
@@ -116,7 +129,7 @@
                 });
             });
         </script>
-        {% endif %}
+        {% endif %} {% endcomment %}
 
       {% endblock js %}
   </body>
