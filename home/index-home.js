@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         style: {
             cursor: 'pointer',
         },
+        id: 'ubicame',	
         events: {
             click: function (data) {
                 $('#map').prepend("<div id='loading' class='absolute flex items-center justify-center bg-opacity-50 bg-black w-full h-full' style='z-index:10000;'>" +
