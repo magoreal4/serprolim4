@@ -37,6 +37,11 @@ urlpatterns = [
     path('documents/', include(wagtaildocs_urls)),
 
     path('sitemap.xml', sitemap),
+    
+    path(
+        "ads.txt",
+        RedirectView.as_view(url=staticfiles_storage.url("ads.txt")),
+    ),
 
     # Optional URL for including your own vanilla Django urls/views
     # re_path(r'', include('home.urls')),
